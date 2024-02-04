@@ -1,0 +1,14 @@
+<div class="container">
+    <igx-radial-gauge class="thermostat" height="400px" width="400px" value="{{targetValue}}" interval="{{interval}}"
+        minimumValue="{{minValue}}" maximumValue="{{maxValue}}" minorTickBrush="#00000000">
+        <igx-radial-gauge-range startValue="{{minValue}}" endValue="{{maxValue ? (maxValue/1.5) : 0}}" brush="white">
+        </igx-radial-gauge-range>
+
+        <!-- Shows an area where the degrees could be too much -->
+        <igx-radial-gauge-range startValue="{{maxValue ? (maxValue/1.5) : 0}}" endValue="{{maxValue}}" brush="red">
+        </igx-radial-gauge-range>
+    </igx-radial-gauge>
+    <br />
+    <!-- Display the current target value -->
+    <div class="value-label">{{ targetValue }}°</div>
+</div>
